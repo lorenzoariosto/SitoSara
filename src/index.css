@@ -92,7 +92,30 @@ p { margin:0 0 20px; }
 .footer-item p { color:#eef3e6; }
 .footer-item a { text-decoration:underline; color:#d9e5cb; }
 .circle-icon { width:41px; height:41px; margin:0 auto; border-radius:50%; color:var(--green); background:var(--green-soft); display:flex; align-items:center; justify-content:center; }
+
 .social-link { display:flex; align-items:center; justify-content:center; margin:25px auto 0; width:52px; height:52px; border-radius:50%; background:#fff; color:var(--green) !important; text-decoration:none !important; }
 .copyright { background:#444; padding:26px max(7.5%, 30px); color:#e4e8df; font-size:17px; }
 @media (max-width:900px) { body { font-size:17px; } .site-header { min-height:165px; padding-top:10px; } .brand { height:105px; width:145px; font-size:28px; } .brand-orbit { inset:12px 5px; } .brand-leaves { bottom:8px; font-size:50px; } .brand-dots { bottom:12px; font-size:25px; }.menu-toggle { display:block; position:absolute; right:22px; top:26px; }.main-nav { display:none; flex-direction:column; align-items:stretch; gap:0; margin:0; background:#fff; padding:12px; box-shadow:0 8px 18px rgba(0,0,0,.1); z-index:4; }.main-nav.open { display:flex; }.main-nav a { text-align:center; padding:10px; } .service-cards,.info-cards,.heart-cards { grid-template-columns:1fr; } .service-card { min-height:0; } .info-card { min-height:0; padding-bottom:30px; } .faq,.about,.module-grid { grid-template-columns:1fr; gap:35px; } .about h1 { text-align:center; } .service-hero h1 { font-size:38px; } .section { padding:50px 24px; } .footer-grid { grid-template-columns:1fr; } }
 @media (max-width:520px) { h1 { font-size:34px; } h2 { font-size:31px; } .home-hero { min-height:300px; } .hero-lines em { font-size:17px; }.service-cards,.info-cards { padding:38px 18px 50px; }.service-card h2 { font-size:34px; }.art-panel { height:220px; }.service-hero { padding:35px 16px; }.service-hero>div { padding:24px 15px; }.service-hero h1 { font-size:31px; }.contact-note { padding:40px 22px; } .heart { padding:55px 20px; } .heart h2 { font-size:36px; } }
+
+/* Allineamento uniforme delle tre schede nella Home */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card p {
+  flex-grow: 1;
+}
+
+.service-card .button {
+  align-self: flex-start;
+  margin-top: auto;
+}
